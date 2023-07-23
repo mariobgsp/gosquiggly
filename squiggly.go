@@ -7,7 +7,7 @@ import (
 	"github.com/mariobgsp/gosquiggly/funcs"
 )
 
-func Filter(jsonString string, fields string) (b []byte, error error) {
+func FilterJson(jsonString string, fields string) (b []byte, error error) {
 	var result map[string]interface{}
 	w, d := funcs.SeparateFilter(fields)
 
