@@ -6,6 +6,7 @@ to get started you need to do `go get pkg`
 go get github.com/mariobgsp/gosquiggly
 ```
 function will return in []bytes and an error if error occurs,
+
 ![function image](image.png)
 
 Input json with string format, here's some example with JSON 2 level
