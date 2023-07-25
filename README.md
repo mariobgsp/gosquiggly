@@ -40,7 +40,22 @@ id,href,status,totalAmount,paymentmethod.bank,paymentmethod.nameoncard,channel.i
 ```
 result will be,
 ```
-{"channel":{"id":"ChannelID"},"href":"https://link.com/v2/refund/a30fb634-0e81-45f2-a238-c3807207cd85","id":"a30fb634-0e81-45f2-a238-c3807207cd85","paymentMethod":{"bank":"ID_BANK","nameOnCard":"John Doe"},"status":"ACCEPTED","totalAmount":{"unit":"SGD","value":1000}}
+{
+  "channel": {
+    "id": "ChannelID"
+  },
+  "href": "https://link.com/v2/refund/a30fb634-0e81-45f2-a238-c3807207cd85",
+  "id": "a30fb634-0e81-45f2-a238-c3807207cd85",
+  "paymentMethod": {
+    "bank": "ID_BANK",
+    "nameOnCard": "John Doe"
+  },
+  "status": "ACCEPTED",
+  "totalAmount": {
+    "unit": "SGD",
+    "value": 1000
+  }
+}
 ```
 ##  End of words
-It's only repository needed for my current project as backend developer using go. It's already achieving the requirement i need. Feel free to contribute!
+It's only repository needed for my current project as backend developer using go. It's already achieving the requirement i need. Feel free to contribute! -Ar
