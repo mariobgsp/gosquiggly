@@ -27,7 +27,7 @@ func AcquireWithDots(fields []string, jsonStr map[string]interface{}) []map[stri
 	var collectedSlices []map[string]interface{}
 
 	newMap1 := make(map[string]interface{})
-	finalMap := make(map[string]map[string]any)
+	finalMap := make(map[string]map[string]interface{})
 	sFinalMap := make(map[string]interface{})
 
 	for _, filter := range fields {
@@ -48,7 +48,7 @@ func AcquireWithDots(fields []string, jsonStr map[string]interface{}) []map[stri
 				json.Unmarshal(b, &newMap1)
 				// TODO create new map
 				if !boo {
-					finalMap[key] = make(map[string]any)
+					finalMap[key] = make(map[string]interface{})
 				}
 
 				for k, v := range newMap1 {
@@ -70,7 +70,7 @@ func AcquireWithDots(fields []string, jsonStr map[string]interface{}) []map[stri
 	return collectedSlices
 }
 
-func CheckOnMap(key string, mapSample map[string]map[string]any) bool {
+func CheckOnMap(key string, mapSample map[string]map[string]interface{}) bool {
 	check := false
 	for k := range mapSample {
 		if k == key {
