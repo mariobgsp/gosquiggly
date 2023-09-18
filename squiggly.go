@@ -14,7 +14,7 @@ func FilterJson(jsonString string, fields string) (b []byte, error error) {
 	err := json.Unmarshal([]byte(jsonString), &result)
 	if err != nil {
 		log.Panicf("error %s", err)
-		return nil, err
+		return
 	}
 
 	// filtering #1
@@ -22,6 +22,12 @@ func FilterJson(jsonString string, fields string) (b []byte, error error) {
 	// filtering #2
 	wd := funcs.AcquireWithDots(d, result)
 
-	resultFiltered := funcs.MergeMapInterface(wtd, wd)
-	return resultFiltered, nil
+	if len(wtd) >= 1 && len(wd) >= 1 {
+		resultFiltered := funcs.MergeMapInterface(wtd, wd)
+		return resultFiltered, nil
+	} else if len(wtd) == 0 || len(wd) == 0 {
+		resultFiltered := funcs.FilterSingleMap(wtd, wd)
+		return resultFiltered, nil
+	}
+	return
 }
