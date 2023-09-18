@@ -1,3 +1,4 @@
+# Go Squiggly JSON Filter
 ## Overview
 gosquiggly is adapted from https://github.com/bohnman/squiggly work as the same but only 2 level JSON property.
 ## How it works
